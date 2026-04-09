@@ -1,16 +1,45 @@
-# React + Vite
+# ポートフォリオサイトの紹介
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+コンポーネント化で可読性、動的コンテンツ生成による拡張性を持たせ、アニメーションによるモダンなサイトを目指して制作しました。
 
-Currently, two official plugins are available:
+## サイトURL
+[JUMP SITE](https://portfolio-site-delta-mauve.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 使用技術
+- **Frontend:** React + Vite
+- **Styling:** CSS
+- **Animation:** Framer Motion
+- **Deploying:** Vercel
 
-## React Compiler
+## こだわった点
+- **保守性・拡張性の担保:**
+べた書きのコードではなく、配列からコンテンツを動的に生成することでメンテナンス面などから保守性・拡張性の高いコードになるように記述しました。
+(実務の場合ではJSONなどにコンテンツを定義し、引用するのがメジャーだと思いますが、これらを実装するには安全性の観点からTSがほぼ必須であると認識しているのですが、私自身まだWeb制作が学習段階にありTypeScriptも学習中のため、今回はある程度慣れているJavaScriptで実装することになりました。)
+- **オープニングアニメーション:**
+計8種類のプログラミング言語の出力構文をランダムに抽選し、一文字づつタイプしていくようにアニメーションを作成しました。特に、テキストエディタの挙動(クォーテーションの自動補完など)を再現することで、エンジニア向けの遊び心とクオリティの両立を図りました。
+※クオーテーションを一回押すだけで2つ自動で出す機能 " -> "" や { -> {} 
+- **カスタムカーソル:**
+カーソルは2つの部品から作りました。インナードットでは従来のカーソルのように動作し、アウターカーソルの部分ではインナードットに少し遅れて追尾することで、少しリッチなサイトの演出を図りました。また、UI/UXの観点から特定のエリアにカーソルが侵入した際、背景とカーソルが同化して見失わないようにカーソルの色を変化させることでUI/UXを担保しています。
+コンタクト内の特定のに侵入した際はカーソルがテキスト入力の邪魔にならないようにデフォルトのカーソルに変更しています。
+- **ホバーアニメーション:**
+ヘッダーのナビゲーションでは透過度をいじるだけでなく、疑似要素を用いたリッチなアニメーションになるよう作成しました。また、プロダクトやニュースなどのコンテンツアイテムにはユーザーがカーソルを動かして「楽しい」と感じるようなアニメーションにできたと思います。
+- **入力フォームのUX:**
+入力情報のバリデーション機能に加え、バリデーションを通過したチェックマークを、入力ミスがあった場合はinputのアウトラインを赤色に変更させることで、視覚的フィードバックを担保しています。
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## 苦労した点
+- **レスポンシブデザイン**
+今回のサイト制作ではデスクトップ画面を優先して設計したため、レスポンシブ対応時に大幅な改修をしなければならなくなってしまいました。この経験から、モバイルファーストの重要性を深く理解しました。
+- **Framer Motionを用いたアニメーションの改善**
+プロダクトのセクションにてモーダルを作成しようと思い、JSXでモーダルの表示をステートで管理していたのですがプログラムの構造上、出現のアニメーションはできても消失のアニメーションを作るのが難しくなってしまいました。そのため**Framer Motion**を導入し、提供される機能を用いて消失時のアニメーションを定義することで課題を乗り越えました。
 
-## Expanding the ESLint configuration
+## ⚙️ 開発環境のセットアップ方法
+他のエンジニアがこのコードをローカルで動かすための手順です。
+```bash
+# クローン
+git clone [https://github.com/ユーザー名/リポジトリ名.git](https://github.com/ユーザー名/リポジトリ名.git)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# 依存関係のインストール
+npm install
+
+# 開発サーバーの起動
+npm run dev
