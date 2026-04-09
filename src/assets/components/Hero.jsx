@@ -4,7 +4,7 @@ const Hero = () => {
         <section className="hero-container" id="section-top">
             <video
                 className="hero-video"
-                src="./src/assets/video/hero-hq-loop.mp4"
+                src="/video/hero-hq-loop.mp4"
                 autoPlay
                 muted
                 loop

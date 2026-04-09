@@ -76,12 +76,12 @@ const Product = () => {
                             <button className="modal-button hover-cursor" onClick={() => setActivateModal(null)}>
                                 <img
                                     className="modal-icon"
-                                    src="./src/assets/img/close-icon.svg"
+                                    src="/img/close-icon.svg"
                                     alt="close" />
                             </button>
                             <img
                                 className="modal-icon"
-                                src={`./src/assets/img/${activateModal.id}-icon.svg`}
+                                src={`/img/${activateModal.id}-icon.svg`}
                                 alt={activateModal.id} />
                             <h3>{activateModal.name}</h3>
                             
