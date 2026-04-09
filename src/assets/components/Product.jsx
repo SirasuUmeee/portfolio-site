@@ -37,7 +37,7 @@ const Product = () => {
                                 <div className="product-img-container">
                                     <img
                                         className="product-icon"
-                                        src={`./src/assets/img/${product.id}-icon.svg`}
+                                        src={`/img/${product.id}-icon.svg`}
                                         alt={product.id} />
                                     <span className="product-name">{product.name}</span>
                                 </div>
@@ -47,7 +47,7 @@ const Product = () => {
                                         <div className="hover-text">
                                             <img
                                                 className="svg-icon"
-                                                src="./src/assets/img/arrow-right.svg"
+                                                src="/img/arrow-right.svg"
                                                 alt="arrow" />
                                         </div>
                                     </button>
