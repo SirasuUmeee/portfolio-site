@@ -90,15 +90,17 @@ const Contact = () => {
                             <li className={`form-item disable-cursor-area ${item.require ? "form-require" : ""}`} key={item.id}>
                                 <label className="form-label form-entry-check">
                                     <span className={`form-category ${validation.isShowCheck[item.id] ? "form-input-accept" : ""}`}>{item.label}</span>
-                                    <input
-                                        className={`form-input ${getClassName(item.id, item.require)}`}
-                                        name={item.id}
-                                        type={item.type}
-                                        onBlur={isTouch}
-                                        onChange={changeData}
-                                        value={formData[item.id]}
-                                        placeholder={item.desc} />
-                                    <span className={`form-check ${validation.isShowCheck[item.id] ? "" : "form-check-hidden"} `}>✔</span>
+                                    <div className="form-wrapper">
+                                        <input
+                                            className={`form-input ${getClassName(item.id, item.require)}`}
+                                            name={item.id}
+                                            type={item.type}
+                                            onBlur={isTouch}
+                                            onChange={changeData}
+                                            value={formData[item.id]}
+                                            placeholder={item.desc} />
+                                        <span className={`form-check ${validation.isShowCheck[item.id] ? "" : "form-check-hidden"} `}>✔</span>
+                                    </div>
                                 </label>
                             </li>
                         );
@@ -106,38 +108,42 @@ const Contact = () => {
                     <li className="form-item disable-cursor-area">
                         <div className="form-label">
                             <span className={`form-category ${validation.isShowCheck.gender ? "form-input-accept" : ""}`}>Gender</span>
-                            <div className="form-input form-gender">
-                                {FORM_RADIO_ASSET.map((radio) => {
-                                    return (
-                                        <label className="form-radio-label" key={radio.id}>
-                                            <input 
-                                                className="form-radio"
-                                                id={`form-radio-${radio.id}`}
-                                                name="gender"
-                                                type="radio"
-                                                onChange={changeData}
-                                                value={radio.name}
-                                                checked={formData.gender === radio.name} />
-                                            {radio.name}
-                                        </label>
-                                    );
-                                })}
+                            <div className="form-wrapper">
+                                <div className="form-input form-gender">
+                                    {FORM_RADIO_ASSET.map((radio) => {
+                                        return (
+                                            <label className="form-radio-label" key={radio.id}>
+                                                <input 
+                                                    className="form-radio"
+                                                    id={`form-radio-${radio.id}`}
+                                                    name="gender"
+                                                    type="radio"
+                                                    onChange={changeData}
+                                                    value={radio.name}
+                                                    checked={formData.gender === radio.name} />
+                                                {radio.name}
+                                            </label>
+                                        );
+                                    })}
+                                </div>
+                                <span className={`form-check ${validation.isShowCheck.gender ? "" : "form-check-hidden"}`}>✔</span>
                             </div>
-                            <span className={`form-check ${validation.isShowCheck.gender ? "" : "form-check-hidden"}`}>✔</span>
                         </div>
                     </li>
                     <li className="form-item form-require disable-cursor-area">
                         <label className="form-label form-entry-check">
                             <span className={`form-category ${validation.isShowCheck.message ? "form-input-accept" : ""}`}>Message</span>
-                            <textarea
-                                name="message"
-                                className={`form-input ${getClassName("message", true)}`}
-                                onBlur={isTouch}
-                                onChange={changeData}
-                                value={formData.message}
-                                placeholder="Write down your request"
-                            ></textarea>
-                            <span className={`form-check ${validation.isShowCheck.message ? "" : "form-check-hidden"} `}>✔</span>
+                            <div className="form-wrapper">
+                                <textarea
+                                    name="message"
+                                    className={`form-input ${getClassName("message", true)}`}
+                                    onBlur={isTouch}
+                                    onChange={changeData}
+                                    value={formData.message}
+                                    placeholder="Write down your request"
+                                ></textarea>
+                                <span className={`form-check ${validation.isShowCheck.message ? "" : "form-check-hidden"} `}>✔</span>
+                            </div>
                         </label>
                     </li>
                     <li className="form-item">

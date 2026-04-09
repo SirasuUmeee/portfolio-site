@@ -543,7 +543,7 @@ form
     border: solid var(--common-page-color);
     border-width: 1px 0;
 
-    position: relative;
+    /* position: relative; */
 }
 .form-item:has(label) {
     background-color: #fff;
@@ -562,6 +562,11 @@ form
     width: 100px;
     margin-left: 5px;
 }
+.form-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
 .form-input {
     font-size: 16px;
     height: auto;
@@ -579,6 +584,7 @@ textarea.form-input {
     height: 90px;
     border-width: 2px;
     letter-spacing: 0;
+    font-family: auto;
 }
 .form-input:focus {
     border: 2px solid var(--common-page-color);
@@ -595,9 +601,10 @@ input.form-alert, textarea.form-alert {
 }
 .form-check {
     position: absolute;
-    left: 97%;
+    right: 10px;
     color: var(--form-success-color);
     z-index: 1000;
+    pointer-events: none;
 }
 .form-input-accept {
     color: var(--form-success-color);
