@@ -542,8 +542,6 @@ form
     margin: 10px;
     border: solid var(--common-page-color);
     border-width: 1px 0;
-
-    /* position: relative; */
 }
 .form-item:has(label) {
     background-color: #fff;
