@@ -36,7 +36,7 @@
 ## 開発環境のセットアップ方法
 ```bash
 # クローン
-git clone [https://github.com/SirasuUmeee/portfolio-site.git](https://github.com/SirasuUmeee/portfolio-site.git)
+git clone https://github.com/SirasuUmeee/portfolio-site.git
 
 # 依存関係のインストール
 npm install
