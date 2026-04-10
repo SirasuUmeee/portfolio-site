@@ -3,7 +3,7 @@
 コンポーネント化で可読性、動的コンテンツ生成による拡張性を持たせ、アニメーションによるモダンなサイトを目指して制作しました。
 
 ## サイトURL
-<a href="https://portfolio-site-delta-mauve.vercel.app/" target="_blank" rel="noopener noreferrer">JUMP SITE</a>
+<a href="https://portfolio-site-delta-mauve.vercel.app/" target="blank" rel="noopener noreferrer">JUMP SITE</a>
 
 ## 使用技術
 - **Frontend:** React + Vite
