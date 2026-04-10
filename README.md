@@ -34,7 +34,6 @@
 プロダクトのセクションにてモーダルを作成しようと思い、JSXでモーダルの表示をステートで管理していたのですがプログラムの構造上、出現のアニメーションはできても消失のアニメーションを作るのが難しくなってしまいました。そのため**Framer Motion**を導入し、提供される機能を用いて消失時のアニメーションを定義することで課題を乗り越えました。
 
 ## 開発環境のセットアップ方法
-他のエンジニアがこのコードをローカルで動かすための手順です。
 ```bash
 # クローン
 git clone [https://github.com/SirasuUmeee/portfolio-site.git](https://github.com/SirasuUmeee/portfolio-site.git)
