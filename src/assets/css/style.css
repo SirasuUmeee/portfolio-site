@@ -2,8 +2,9 @@
 common style
 */
 :root {
-    --primary-color: #255cf3;
+    --primary-color: #2374AB;
     --secondary-color: #191970;
+    --default-background-color: #E9F1F7;
     --common-page-color: #333;
     --headline-text-color: #fdf1f5;
     --form-bg-color: #e9e9e9;
@@ -25,7 +26,7 @@ html {
 }
 body {
     color: var(--common-page-color);
-    background-color: #E9F1F7;
+    background-color: var(--default-background-color);
     cursor: none;
     scrollbar-gutter: stable;
 }
