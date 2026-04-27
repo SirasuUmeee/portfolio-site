@@ -11,7 +11,7 @@ const About = () => {
             {ABOUT_ASSET.map((about) => {
                 return (
                     <figure className="about-figure-container" key={about.id}>
-                        <img src={about.image} alt={about.id} />
+                        <img className="about-image" src={about.image} alt={about.id} />
                         <figcaption className="about-caption">
                             <h3>dummy text dummy text dummy text dummy text dummy text</h3>
                             <p className="hover-cursor"><span className="bold">Lorem</span> ipsum dolor sit amet, consectetur adipisicing elit. Quaerat odit veritatis error odio provident magnam consequatur nostrum earum facilis voluptatibus labore obcaecati debitis modi, alias hic iure impedit eos soluta.
