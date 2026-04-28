@@ -1,6 +1,17 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import ProductItem from "./ProductItem";
 
+const desc ="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi labore odio sit ullam? Explicabo in magni suscipit id non at soluta, cumque eveniet vitae magnam praesentium illum earum sit doloremque. Mollitia cum magni assumenda aliquid quo tempora nisi voluptatem ea adipisci sunt unde inventore magnam itaque eum ratione earum, iusto non. Laborum mollitia aperiam minima rem, blanditiis perferendis aspernatur molestias?"
+const PRODUCTS_ASSET = [
+    {id: "html", name: "HTML5", desc: desc},
+    {id: "css", name: "CSS", desc: desc},
+    {id: "js", name: "JavaScript", desc: desc},
+    {id: "react", name: "React", desc: desc},
+    {id: "python3", name: "Python3", desc: desc},
+    {id: "java", name: "Java", desc: desc},
+    {id: "rust", name: "Rust", desc: desc},
+];
 
 const Product = () => {
     const [activateModal, setActivateModal] = useState(null);
@@ -15,47 +26,13 @@ const Product = () => {
         return () => document.body.style.overflow = "unset";
     }, [activateModal])
 
-    const desc ="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi labore odio sit ullam? Explicabo in magni suscipit id non at soluta, cumque eveniet vitae magnam praesentium illum earum sit doloremque. Mollitia cum magni assumenda aliquid quo tempora nisi voluptatem ea adipisci sunt unde inventore magnam itaque eum ratione earum, iusto non. Laborum mollitia aperiam minima rem, blanditiis perferendis aspernatur molestias?"
-    const PRODUCTS_ASSET = [
-        {id: "html", name: "HTML5", desc: desc},
-        {id: "css", name: "CSS", desc: desc},
-        {id: "js", name: "JavaScript", desc: desc},
-        {id: "react", name: "React", desc: desc},
-        {id: "python3", name: "Python3", desc: desc},
-        {id: "java", name: "Java", desc: desc},
-        {id: "rust", name: "Rust", desc: desc},
-    ];
-
     return (
         <section id="section-product">
             <h2 className="main-header-text">Products</h2>
             <ul className="product-container nav-list">
-                {PRODUCTS_ASSET.map((product) => {
-                    return (
-                        <li className="product-item  hover-cursor" key={product.id}>
-                            <figure className="product-figure-container">
-                                <div className="product-img-container">
-                                    <img
-                                        className="product-icon"
-                                        src={`/img/${product.id}-icon.svg`}
-                                        alt={product.id} />
-                                    <span className="product-name">{product.name}</span>
-                                </div>
-                                <figcaption className="product-caption">
-                                    <p>{product.desc}</p>
-                                    <button className="learn-more" type="button" onClick={() => setActivateModal(product)}>
-                                        <div className="hover-text">
-                                            <img
-                                                className="svg-icon"
-                                                src="/img/arrow-right.svg"
-                                                alt="arrow" />
-                                        </div>
-                                    </button>
-                                </figcaption>
-                            </figure>
-                        </li>
-                    );
-                })}
+                {PRODUCTS_ASSET.map((product) => (
+                    <ProductItem key={product.id} item={product} setActivateModal={setActivateModal} />
+                ))}
             </ul>
             <AnimatePresence>
                 {activateModal && (
