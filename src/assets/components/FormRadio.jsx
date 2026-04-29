@@ -10,7 +10,7 @@ const FormRadio = ({ radio, changeData, formData }) => {
                 onChange={changeData}
                 value={radio.name}
                 checked={formData.gender === radio.name} />
-            {radio.name}
+            <span className="form-radio-name">{radio.name}</span>
         </label>
     );
 };
